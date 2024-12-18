@@ -3,7 +3,7 @@ from database import setup_database
 
 def main():
     setup_database()
-    manager = UserManager()
+    manager = setup_database()
 
     while True:
         print("Sistema de Gerenciamento de Usuários")
@@ -33,7 +33,7 @@ def main():
             name = input("Novo nome (pressione Enter para ignorar): ")
             email = input("Novo email (pressione Enter para ignorar): ")
             role = input("Nova função (pressione Enter para ignorar): ")
-            manager.edit_users(user_id, name or None, email or None, role or None)
+            manager.edit_user(user_id, name or None, email or None, role or None)
             print("Usuário editado com sucesso!")
 
         elif choice == '4':

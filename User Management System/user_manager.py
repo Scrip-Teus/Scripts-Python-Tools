@@ -7,12 +7,12 @@ class UserManager():
         
     def add_user(self, name, email, role):
         
-        con = sqlite3.connect(self.db_path) #Cria uma conexão com o banco de dados
-        cur = con.cursor() #Cria um cursor para iterar sobre o banco de dados
+        con = sqlite3.connect(self.db_path)
+        cur = con.cursor()
         
-        cursor.execute('''INSERT TO users (name, email, role) VALUES (?, ?, ?)''', (name, email, role))
-        con.commit
-        con.close
+        cur.execute('''INSERT INTO users (name, email, role) VALUES (?, ?, ?)''', (name, email, role))
+        con.commit()
+        con.close()
     
     def edit_users(self, user_id, name=None, email=None, role=None):
         
@@ -32,27 +32,27 @@ class UserManager():
         if role:
             updates.append("role = ?")
             params.append(role)
-        
-        query += ", ".join(updates) +" WHERE id = ?"
-        params.append(users_id)
+
+        query += ", ".join(updates) + " WHERE id = ?"
+        params.append(user_id)
         cur.execute(query, tuple(params))
-        con.commit
-        con.close
+        con.commit()
+        con.close()
     
     def delete_user(self, user_id):
         con = sqlite3.connect(self.db_path)
         cur = con.cursor()
         
         cursor.execute('DELETE FROM users WHERE id = ?', (user_id,))
-        con.commit
-        con.close
+        con.commit()
+        con.close()
         
     def list_users(self):
         con = sqlite3.connect(self.db_path)
         cur = con.cursor()
         
         cur.execute("SELECT * FROM users")
-        users = users.fetchall()
+        users = cur.fetchall()
         con.close()
         return users
             
