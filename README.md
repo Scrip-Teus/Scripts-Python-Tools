@@ -1,4 +1,4 @@
-# Scripts-Python-Tool
+# Scripts-Python-Tools
 
 A collection of Python scripts designed for real-world applications, automating tasks, and solving everyday challenges efficiently.
 # Overview
