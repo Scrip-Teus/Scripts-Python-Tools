@@ -6,7 +6,7 @@ import pycountry
 import pytz
 
 #colocando a API Key
-chave = '1062ec08873bd859bc2bb0b4e0ee1e4e'
+chave = 'eeadbb882433b74ccc1ac13912f2e1b6'
 cidade = "Lisboa"
 api_link = f'https://api.openweathermap.org/data/2.5/weather?q={cidade}&appid={chave}'
 
@@ -46,7 +46,4 @@ data = datetime.datetime.now(pytz.timezone(f"{horario}"))
 print(data.strftime("%d/%m/%Y | %H:%M:%S"))
 
 # --- Tempo ---
-
-
-print(data.strftime("%d/%m/%Y | %H:%M:%S")) 
 
